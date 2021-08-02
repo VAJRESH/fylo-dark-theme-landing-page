@@ -12,18 +12,28 @@
       href="./images/favicon-32x32.png"
     />
 
+    <script
+      src="https://kit.fontawesome.com/77ffb54878.js"
+      crossorigin="anonymous"
+    ></script>
     <title>
-      Frontend Mentor | Fylo landing page with dark theme and features grid
+      Fylo landing page with dark theme and features grid
     </title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
+      body {
+        overflow-x: hidden;
+      }
       .attribution {
         font-size: 11px;
         text-align: center;
+        background-color: hsl(216, 53%, 9%);
       }
       .attribution a {
-        color: hsl(228, 45%, 44%);
+        color: hsl(176, 68%, 64%);
+      }
+      .nav-bar {
+        align-items: baseline;
       }
       #cta {
         padding: 10px 80px;
@@ -42,6 +52,12 @@
       .intro {
         background-color: hsl(217, 28%, 15%);
         margin: 0 -10px;
+      }
+      .about-section {
+        padding: 20px 200px !important;
+      }
+      .about-section p {
+        padding: 20px 100px;
       }
       .lift-up {
         z-index: 10;
@@ -77,6 +93,7 @@
       }
       .testimonial-section {
         margin-top: 150px;
+        margin-bottom: 200px;
         position: relative;
         z-index: 1;
       }
@@ -88,7 +105,7 @@
         content: "";
         position: absolute;
         top: -35px;
-        left: -10px;
+        left: -5px;
         z-index: -1;
         background-color: red;
         height: 60px;
@@ -96,15 +113,69 @@
         display: block;
         background: url(./images/bg-quotes.png) no-repeat;
       }
-      .email-section{
+      .email-section {
         background-color: hsl(217, 28%, 15%);
+        z-index: 2;
       }
-      .email-section h2{
+      .email-section h2 {
         margin-top: 20px;
       }
-      .email-section button{
-        max-width: 170px;
+      .email-section button {
         background-color: hsl(176, 68%, 64%);
+      }
+      .footer {
+        background-color: hsl(216, 53%, 9%);
+        width: 100vw;
+        margin: -10px;
+        position: relative;
+      }
+      .footer ul {
+        list-style: none;
+      }
+      .footer::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        display: block;
+        background-color: hsl(216, 53%, 9%);
+        width: 100vw;
+        height: 80px;
+        z-index: 0;
+      }
+
+      @media (max-width: 380px) {
+        .nav-link {
+          font-size: 3vw;
+        }
+        .intro {
+          margin: 0;
+        }
+        .about-section {
+          padding: 5px !important;
+        }
+        .about-section p {
+          padding: 20px;
+        }
+        .features .mx-5 {
+          margin: 0 !important;
+        }
+        .features .col-12 {
+          margin-bottom: 50px !important;
+        }
+        .benefits .px-5 {
+          padding: 10px !important;
+        }
+        .testimonial-section .col-12 {
+          margin: 10px 0;
+        }
+        .testimonial:first-child::before{
+          top: -30px;
+          left: 0;
+        }
+        .email-section .col:last-child{
+          padding: 1rem;
+          margin-top: 2rem;
+        }
       }
     </style>
 
@@ -118,12 +189,12 @@
   <body>
     <main id="main" class="container-fluid text-light">
       <div class="intro">
-        <header class="container-xl p-0 pt-5">
-          <div class="row">
-            <div class="col-8">
-              <img class="img-fluid" src="./images/logo.svg" alt="" />
+        <header class="container-xl container p-0 pt-5">
+          <div class="row nav-bar">
+            <div class="col-4 col-sm-6">
+              <img class="img-fluid ps-4" src="./images/logo.svg" alt="" />
             </div>
-            <div class="col-4">
+            <div class="col">
               <ul class="nav d-flex justify-content-end">
                 <li class="nav-item">
                   <a
@@ -145,30 +216,32 @@
         </header>
         <div class="container">
           <div class="d-flex justify-content-center m-4">
-            <img src="./images/illustration-intro.png" alt="" />
+            <img
+              class="img-fluid"
+              src="./images/illustration-intro.png"
+              alt=""
+            />
           </div>
-          <div class="container">
-            <div class="d-flex mx-5 text-center justify-content-center">
+          <div class="container about-section">
+            <div class="d-flex mb-4 text-center justify-content-center">
               <h1 class="lift-up">
                 All your files in one secure location, <br />
                 accessible anywhere.
               </h1>
             </div>
-            <div class="row mx-5 m-4 text-center justify-content-center">
+            <div class="row text-center justify-content-center">
               <div class="lift-up col">
                 <p>
                   Fylo stores all your most important files in one secure
-                  location. <br />
-                  Access them wherever you need, share and collaborate with
-                  friends <br />
-                  family, and co-workers.
+                  location. Access them wherever you need, share and collaborate
+                  with friends family, and co-workers.
                 </p>
               </div>
             </div>
-            <div class="d-flex text-center justify-content-center mb-5">
+            <div class="d-flex text-center justify-content-center mt-4 mb-5">
               <button
                 id="cta"
-                class="lift-up btn btn-info rounded-pill text-white"
+                class="lift-up fw-bold btn btn-info rounded-pill text-white"
               >
                 Get Started
               </button>
@@ -181,18 +254,14 @@
             srcset="./images/bg-curvy-mobile.svg"
             type="image/svg+xml"
           />
-          <img
-            src="./images/bg-curvy-desktop.svg"
-            class="img-fluid"
-            alt="..."
-          />
+          <img src="./images/bg-curvy-desktop.svg" alt="" />
         </picture>
       </div>
 
-      <div class="container mt-5 mb-5 text-center">
-        <div class="row gy-5 text-justify">
-          <div class="col-1"></div>
-          <div class="col-4 lift-up mx-5">
+      <div class="container mt-5 mb-5 text-center features">
+        <div class="row gy-5 text-justify pb-5">
+          <div class="col-sm-1"></div>
+          <div class="col-12 col-sm-4 lift-up mx-5">
             <img
               class="img-fluid mb-4 icon"
               src="./images/icon-access-anywhere.svg"
@@ -204,7 +273,7 @@
               your account means your files follow you everywhere.
             </p>
           </div>
-          <div class="col-4 lift-up mx-5">
+          <div class="col-12 col-sm-4 lift-up mx-5">
             <img
               class="img-fluid mb-4"
               src="./images/icon-security.svg"
@@ -218,7 +287,7 @@
             </p>
           </div>
           <div class="col-1"></div>
-          <div class="col-4 lift-up mx-5">
+          <div class="col-12 col-sm-4 lift-up mx-5">
             <img
               class="img-fluid mb-4"
               src="./images/icon-collaboration.svg"
@@ -230,7 +299,7 @@
               colleagues for live collaboration. No email attachments required.
             </p>
           </div>
-          <div class="col-4 lift-up mx-5">
+          <div class="col-12 col-sm-4 lift-up mx-5">
             <img
               class="img-fluid mb-4"
               src="./images/icon-any-file.svg"
@@ -246,16 +315,16 @@
         </div>
       </div>
 
-      <div class="container">
+      <div class="container benefits">
         <div class="row">
-          <div class="col">
+          <div class="col-sm-6 col-12">
             <img
               src="./images/illustration-stay-productive.png"
               alt=""
               class="img-fluid"
             />
           </div>
-          <div class="col px-5">
+          <div class="col-sm-6 col-12 px-5">
             <h2 class="h1 mt-5 mb-4">
               Stay productive, <br />
               wherever you are
@@ -275,53 +344,69 @@
         </div>
       </div>
 
-      <div class="container testimonial-section mb-5">
+      <div class="container testimonial-section">
         <div class="row">
-          <div class="col p-4 shadow testimonial">
-            <article>
-              Fylo has improved our team productivity by an order of magnitude.
-              Since making the switch our team has become a well-oiled
-              collaboration machine.
-            </article>
-            <section class="profile mt-3">
-              <img class="rounded-circle" src="./images/profile-1.jpg" alt="" />
-              <h6>Satish Patel</h6>
-              <span>Founder & CEO, Huddle</span>
-            </section>
+          <div class="col-12 col-sm-4">
+            <div class="p-4 shadow testimonial">
+              <article>
+                Fylo has improved our team productivity by an order of
+                magnitude. Since making the switch our team has become a
+                well-oiled collaboration machine.
+              </article>
+              <section class="profile mt-3">
+                <img
+                  class="rounded-circle"
+                  src="./images/profile-1.jpg"
+                  alt=""
+                />
+                <h6>Satish Patel</h6>
+                <span>Founder & CEO, Huddle</span>
+              </section>
+            </div>
           </div>
-          <div class="col p-4 mx-5 shadow testimonial">
-            <article>
-              Fylo has improved our team productivity by an order of magnitude.
-              Since making the switch our team has become a well-oiled
-              collaboration machine.
-            </article>
-            <section class="profile mt-3">
-              <img class="rounded-circle" src="./images/profile-2.jpg" alt="" />
-              <h6>Bruce McKenzie</h6>
-              <span>Founder & CEO, Huddle</span>
-              <!-- <div>
-              </div> -->
-            </section>
+          <div class="col-12 col-sm-4">
+            <div class="p-4 shadow testimonial">
+              <article>
+                Fylo has improved our team productivity by an order of
+                magnitude. Since making the switch our team has become a
+                well-oiled collaboration machine.
+              </article>
+              <section class="profile mt-3">
+                <img
+                  class="rounded-circle"
+                  src="./images/profile-2.jpg"
+                  alt=""
+                />
+                <h6>Bruce McKenzie</h6>
+                <span>Founder & CEO, Huddle</span>
+              </section>
+            </div>
           </div>
-          <div class="col p-4 shadow testimonial">
-            <article>
-              Fylo has improved our team productivity by an order of magnitude.
-              Since making the switch our team has become a well-oiled
-              collaboration machine.
-            </article>
-            <section class="profile mt-3">
-              <img class="rounded-circle" src="./images/profile-3.jpg" alt="" />
-              <h6>Iva Boyd</h6>
-              <span>Founder & CEO, Huddle</span>
-            </section>
+          <div class="col-12 col-sm-4">
+            <div class="p-4 shadow testimonial">
+              <article>
+                Fylo has improved our team productivity by an order of
+                magnitude. Since making the switch our team has become a
+                well-oiled collaboration machine.
+              </article>
+              <section class="profile mt-3">
+                <img
+                  class="rounded-circle"
+                  src="./images/profile-3.jpg"
+                  alt=""
+                />
+                <h6>Iva Boyd</h6>
+                <span>Founder & CEO, Huddle</span>
+              </section>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="container">
-        <div class="row">
-          <div class="col-2"></div>
-          <div class="col email-section p-4 text-center">
+        <div class="row px-3">
+          <div class="col-sm-2"></div>
+          <div class="col-12 col-sm-8 email-section p-4 text-center rounded">
             <h2>Get early access today</h2>
             <p class="mt-3 mb-4">
               It only takes a minute to sign up and our free starter tier is
@@ -330,26 +415,89 @@
             </p>
             <div class="container">
               <div class="row">
-                <input class="col rounded-pill px-5 p-2 me-5 border-0" type="email" placeholder="email@example.com" />
-                <button class="col rounded-pill border-0 text-light">Get Started For Free</button>
+                <input
+                  class="col-12 col-sm-8 rounded-pill px-5 p-2 me-4 border-0"
+                  type="email"
+                  placeholder="email@example.com"
+                />
+                <button class="col fw-bold rounded-pill border-0 text-light">
+                  Get Started For Free
+                </button>
               </div>
             </div>
           </div>
-          <div class="col-2"></div>
+          <div class="col-sm-2"></div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="container pt-5">
+          <div class="row pt-5 pb-5">
+            <div class="col-12 mb-4">
+              <img src="./images/logo.svg" alt="" />
+            </div>
+
+            <div class="col-sm-4 col-12 ps-3 mb-3">
+              <div class="d-flex">
+                <div>
+                  <img src="./images/icon-location.svg" alt="" />
+                </div>
+                <span class="ps-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                </span>
+              </div>
+            </div>
+
+            <div class="col-sm-3 col-12 ps-3 mb-5">
+              <div>
+                <img src="./images/icon-phone.svg" alt="" />
+                <span class="ps-3"> +1-543-123-4567 </span>
+              </div>
+              <div class="mt-3">
+                <img src="./images/icon-email.svg" alt="" />
+                <span class="ps-3"> example@fylo.com </span>
+              </div>
+            </div>
+
+            <div class="col-sm-1 col-12 mb-4">
+              <ul class="ps-0 pe-5">
+                <li class="mb-2">About Us</li>
+                <li class="mb-2">Jobs</li>
+                <li class="mb-2">Press</li>
+                <li class="mb-2">Blog</li>
+              </ul>
+            </div>
+            <div class="col-sm-2 col-12 mb-5">
+              <ul class="ps-0">
+                <li class="mb-2">Contact Us</li>
+                <li class="mb-2">Terms</li>
+                <li class="mb-2">Privacy</li>
+              </ul>
+            </div>
+            <div class="col-sm-2 col-12 mt-2 text-center">
+              <span class="border border-1 rounded-circle mx-2 p-1">
+                <i class="fab fa-facebook ms-1"></i>
+              </span>
+              <span class="border border-1 rounded-circle mx-2 p-1">
+                <i class="fab fa-twitter ms-1"></i>
+              </span>
+              <span class="border border-1 rounded-circle mx-2 p-1">
+                <i class="fab fa-instagram mx-1"></i>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </main>
 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua +1-543-123-4567
-    example@fylo.com About Us Jobs Press Blog Contact Us Terms Privacy
-
     <footer>
-      <p class="attribution">
+      <p class="attribution text-light m-0 pb-4">
         Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          Frontend Mentor
+        </a>
+        . Coded by <a href="https://vajresh.vercel.app">Vajresh</a>.
       </p>
     </footer>
 
