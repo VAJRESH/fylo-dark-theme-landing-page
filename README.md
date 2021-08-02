@@ -25,9 +25,9 @@ Your users should be able to:
 
 ## Output
 
-![large screen]()
+![large screen](https://github.com/VAJRESH/fylo-dark-theme-landing-page/blob/master/output/large-screen.png)
 
-![small screen]()
+![small screen](https://github.com/VAJRESH/fylo-dark-theme-landing-page/blob/master/output/small-screen.png)
 
 ## Links
 
