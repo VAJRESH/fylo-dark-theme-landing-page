@@ -26,10 +26,10 @@ Your users should be able to:
 ## Output
 
 - Large Screen
-![large screen](https://github.com/VAJRESH/fylo-dark-theme-landing-page/blob/master/output/large-screen.png)
+![large screen](./output/large-screen.png)
 
 - Small Screen
-![small screen](https://github.com/VAJRESH/fylo-dark-theme-landing-page/blob/master/output/small-screen.png)
+![small screen](./output/small-screen.png)
 
 ## Links
 
